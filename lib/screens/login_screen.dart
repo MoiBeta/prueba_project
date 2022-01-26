@@ -20,6 +20,15 @@ class _LoginScreenState extends State<LoginScreen> {
   late UserCredential userCredential;
 
   void loginFirebase() async {
+    if(emailController.text.isEmpty || passwordController.text.isEmpty){
+      Fluttertoast.showToast(
+          msg: 'Por favor llena todos los campos',
+          backgroundColor: Colors.grey,
+          textColor: Colors.black,
+          timeInSecForIosWeb: 2
+      );
+      return;
+    }
     try {
       userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailController.text,
@@ -29,22 +38,34 @@ class _LoginScreenState extends State<LoginScreen> {
       if (e.code == 'user-not-found') {
         Fluttertoast.showToast(
           msg: 'Usuario no encontrado',
+            backgroundColor: Colors.grey,
+            textColor: Colors.black,
+            timeInSecForIosWeb: 2
         );
         return;
       } else if (e.code == 'wrong-password') {
         Fluttertoast.showToast(
           msg: 'Contraseña incorrecta',
+            backgroundColor: Colors.grey,
+            textColor: Colors.black,
+            timeInSecForIosWeb: 2
         );
         return;
       } else{
         Fluttertoast.showToast(
           msg: e.message.toString(),
+          backgroundColor: Colors.grey,
+          textColor: Colors.black,
+          timeInSecForIosWeb: 2
         );
         return;
       }
     }
     Fluttertoast.showToast(
-      msg: "Success!",
+        msg: 'Success',
+        backgroundColor: Colors.grey,
+        textColor: Colors.black,
+        timeInSecForIosWeb: 2
     );
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => DatosScreen(userCredential.user?.uid)));
   }

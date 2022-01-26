@@ -22,6 +22,15 @@ class _RegistroScreenState extends State<RegistroScreen> {
   late UserCredential userCredential;
 
   void registroFirebase() async {
+    if(emailController.text.isEmpty || nombreController.text.isEmpty || apellidoController.text.isEmpty || passwordController.text.isEmpty){
+      Fluttertoast.showToast(
+          msg: 'Por favor llena todos los campos',
+          backgroundColor: Colors.grey,
+          textColor: Colors.black,
+          timeInSecForIosWeb: 2
+      );
+      return;
+    }
     try {
       userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text,
@@ -31,17 +40,26 @@ class _RegistroScreenState extends State<RegistroScreen> {
       if (e.code == 'weak-password') {
         Fluttertoast.showToast(
           msg: 'Contraseña demasiado débil',
+            backgroundColor: Colors.grey,
+            textColor: Colors.black,
+            timeInSecForIosWeb: 2
         );
         return;
       } else if (e.code == 'email-already-in-use') {
         print('The account already exists for that email.');
         Fluttertoast.showToast(
           msg: 'La cuenta ya existe',
+            backgroundColor: Colors.grey,
+            textColor: Colors.black,
+            timeInSecForIosWeb: 2
         );
         return;
       } else{
         Fluttertoast.showToast(
           msg: e.message.toString(),
+            backgroundColor: Colors.grey,
+            textColor: Colors.black,
+            timeInSecForIosWeb: 2
         );
         return;
       }
@@ -56,6 +74,9 @@ class _RegistroScreenState extends State<RegistroScreen> {
     }).then((value) {
         Fluttertoast.showToast(
           msg: 'Usuario registrado!',
+            backgroundColor: Colors.grey,
+            textColor: Colors.black,
+            timeInSecForIosWeb: 2
         );
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => DatosScreen(userCredential.user?.uid)));
   }
