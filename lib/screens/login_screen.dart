@@ -53,6 +53,10 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Prueba"),
+        backgroundColor: Colors.black.withOpacity(0.7),
+      ),
       body: SingleChildScrollView(
         reverse: true,
         child: ConstrainedBox(
@@ -100,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           hintText: 'Ingresa tu correo',
                           hintStyle: TextStyle(
                             fontSize: 20,
-                            color: Colors.black.withOpacity(.7),
+                            color: Colors.grey.withOpacity(.7),
                           ),
                           prefixIcon: const Icon(Icons.mail),
                           enabledBorder: const OutlineInputBorder(
@@ -131,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           hintText: 'Ingresa tu contraseña',
                           hintStyle: TextStyle(
                             fontSize: 20,
-                            color: Colors.black.withOpacity(.7),
+                            color: Colors.grey.withOpacity(.7),
                           ),
                           prefixIcon: const Icon(Icons.mail),
                           enabledBorder: const OutlineInputBorder(

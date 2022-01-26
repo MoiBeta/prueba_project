@@ -35,78 +35,84 @@ class DatosScreen extends StatelessWidget {
                 child: Text(snapshot.error.toString())
             );
           } else if(snapshot.hasData){
-            return SingleChildScrollView(
-              reverse: true,
-              child: ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: size.height),
-                child: Stack(
-                  children: [
-                    SizedBox(
-                      height: size.height,
-                      width: size.width,
-                      child: Image.asset(
-                        'assets/images/bg.jpg',
-                        fit: BoxFit.cover,
+            return Scaffold(
+              appBar: AppBar(
+                title: Text("Prueba"),
+                  backgroundColor: Colors.black.withOpacity(0.7),
+              ),
+              body: SingleChildScrollView(
+                reverse: true,
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxHeight: size.height),
+                  child: Stack(
+                    children: [
+                      SizedBox(
+                        height: size.height,
+                        width: size.width,
+                        child: Image.asset(
+                          'assets/images/bg.jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: size.height / 10,
-                            width: size.width / 1.25,
-                            child: Text(
-                              "Nombre: " + snapshot.data!.nombre,
-                              style: const TextStyle(
-                                color: Colors.white70,
-                                fontSize: 20,
+                      Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: size.height / 10,
+                              width: size.width / 1.25,
+                              child: Text(
+                                "Nombre: " + snapshot.data!.nombre,
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: size.height / 10,
-                            width: size.width / 1.25,
-                            child: Text(
-                              "Apellido: " +  snapshot.data!.apellido,
-                              style: const TextStyle(
-                                color: Colors.white70,
-                                fontSize: 20,
+                            SizedBox(
+                              height: size.height / 10,
+                              width: size.width / 1.25,
+                              child: Text(
+                                "Apellido: " +  snapshot.data!.apellido,
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.02,
-                          ),
-                          SizedBox(
-                            height: size.height / 10,
-                            width: size.width / 1.25,
-                            child: Text(
-                              "Correo: " + snapshot.data!.correo,
-                              style: const TextStyle(
-                                color: Colors.white70,
-                                fontSize: 20,
-                              ),
+                            SizedBox(
+                              height: size.height * 0.02,
+                            ),
+                            SizedBox(
+                              height: size.height / 10,
+                              width: size.width / 1.25,
+                              child: Text(
+                                "Correo: " + snapshot.data!.correo,
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 20,
+                                ),
 
-                            ),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.02,
-                          ), SizedBox(
-                            height: size.height / 10,
-                            width: size.width / 1.25,
-                            child: Text(
-                              "Contraseña: " + snapshot.data!.contrasena,
-                              style: const TextStyle(
-                                color: Colors.white70,
-                                fontSize: 20,
                               ),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              height: size.height * 0.02,
+                            ), SizedBox(
+                              height: size.height / 10,
+                              width: size.width / 1.25,
+                              child: Text(
+                                "Contraseña: " + snapshot.data!.contrasena,
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             );

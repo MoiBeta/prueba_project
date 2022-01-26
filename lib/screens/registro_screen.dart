@@ -67,6 +67,10 @@ class _RegistroScreenState extends State<RegistroScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Prueba"),
+        backgroundColor: Colors.black.withOpacity(0.7),
+      ),
       body: SingleChildScrollView(
         reverse: true,
         child: ConstrainedBox(
@@ -100,8 +104,8 @@ class _RegistroScreenState extends State<RegistroScreen> {
                       height: size.height / 10,
                       width: size.width / 1.25,
                       child: TextField(
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: Colors.white70.withOpacity(.7),
                           fontSize: 20,
                         ),
                         controller: emailController,
@@ -111,7 +115,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
                           hintText: 'Ingresa tu correo',
                           hintStyle: TextStyle(
                             fontSize: 20,
-                            color: Colors.black.withOpacity(.7),
+                            color: Colors.grey.withOpacity(.7),
                           ),
                           prefixIcon: const Icon(Icons.mail),
                           enabledBorder: const OutlineInputBorder(
@@ -130,8 +134,8 @@ class _RegistroScreenState extends State<RegistroScreen> {
                       height: size.height / 10,
                       width: size.width / 1.25,
                       child: TextField(
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: Colors.white70.withOpacity(.7),
                           fontSize: 20,
                         ),
                         controller: passwordController,
@@ -141,7 +145,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
                           hintText: 'Ingresa tu contraseña',
                           hintStyle: TextStyle(
                             fontSize: 20,
-                            color: Colors.black.withOpacity(.7),
+                            color: Colors.grey.withOpacity(.7),
                           ),
                           prefixIcon: const Icon(Icons.mail),
                           enabledBorder: const OutlineInputBorder(
@@ -159,8 +163,8 @@ class _RegistroScreenState extends State<RegistroScreen> {
                       height: size.height / 10,
                       width: size.width / 1.25,
                       child: TextField(
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: Colors.white70.withOpacity(.7),
                           fontSize: 20,
                         ),
                         controller: nombreController,
@@ -170,7 +174,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
                           hintText: 'Ingresa tu nombre',
                           hintStyle: TextStyle(
                             fontSize: 20,
-                            color: Colors.black.withOpacity(.7),
+                            color: Colors.grey.withOpacity(.7),
                           ),
                           prefixIcon: const Icon(Icons.mail),
                           enabledBorder: const OutlineInputBorder(
@@ -188,8 +192,8 @@ class _RegistroScreenState extends State<RegistroScreen> {
                       height: size.height / 10,
                       width: size.width / 1.25,
                       child: TextField(
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: Colors.white70.withOpacity(.7),
                           fontSize: 20,
                         ),
                         controller: apellidoController,
@@ -199,7 +203,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
                           hintText: 'Ingresa tu apellido',
                           hintStyle: TextStyle(
                             fontSize: 20,
-                            color: Colors.black.withOpacity(.7),
+                            color: Colors.grey.withOpacity(.7),
                           ),
                           prefixIcon: const Icon(Icons.mail),
                           enabledBorder: const OutlineInputBorder(
